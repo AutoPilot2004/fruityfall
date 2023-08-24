@@ -6,6 +6,13 @@
 #include "Fruit.h"
 #include "Bucket.h"
 
+enum class GameState
+{
+	MENU,
+	PLAYING,
+	GAME_OVER
+};
+
 class Application
 {
 public:
@@ -14,7 +21,6 @@ public:
 private:
 	void onInit();
 	void reset();
-	void gameOver();
 
 	void gameLoop();
 
@@ -33,5 +39,5 @@ private:
 	uint32_t m_score;
 	uint8_t m_lives;
 
-	bool m_gameOver;
+	GameState m_gameState = GameState::MENU;
 };

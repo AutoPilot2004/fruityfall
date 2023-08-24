@@ -11,10 +11,22 @@ static const std::string fruitTexture[NUM_OF_FRUIT_TEXTURES] = {
 	"assets/images/pear.png",
 };
 
+Fruit::Fruit()
+{
+	setRandomTexureOfFruit();
+}
+
 Fruit::Fruit(float posX, float posY)
 	: Object(posX, posY)
 {
-	setRandomTexureOfFruit();
+	Fruit();
+}
+
+void Fruit::initFruitTextures()
+{
+	for (int i = 0; i < NUM_OF_FRUIT_TEXTURES; i++) {
+		m_objectTextures[fruitTexture[i]] = LoadTexture(fruitTexture[i].c_str());
+	}
 }
 
 void Fruit::setRandomTexureOfFruit()
@@ -24,5 +36,5 @@ void Fruit::setRandomTexureOfFruit()
 
 Texture2D Fruit::getRandomTextureOfFruit()
 {
-	return LoadTexture(fruitTexture[Random::uint32(0, NUM_OF_FRUIT_TEXTURES - 1)].c_str());
+	return getFromObjectTextures(fruitTexture[Random::uint32(0, NUM_OF_FRUIT_TEXTURES - 1)]);
 }
