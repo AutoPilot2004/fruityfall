@@ -12,7 +12,7 @@ void Object::setTexture(const std::string& filePath)
 
 void Object::onRender() const
 {
-	DrawTextureEx(m_texture, { m_x - (m_texture.width * m_scale / 2.0f), m_y - (m_texture.height * m_scale / 2.0f)}, m_rotation, m_scale, m_color);
+	DrawTextureEx(m_texture, { m_x - (getWidth() / 2.0f), m_y - (getHeight() / 2.0f)}, m_rotation, m_scale, m_color);
 }
 
 const Texture2D& Object::getFromObjectTextures(const std::string& filePath)

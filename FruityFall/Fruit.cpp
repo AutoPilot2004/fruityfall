@@ -2,14 +2,17 @@
 
 #include "Random.h"
 
-static constexpr int NUM_OF_FRUIT_TEXTURES = 4;
+namespace
+{
+	constexpr int NUM_OF_FRUIT_TEXTURES = 4;
 
-static const std::string fruitTexture[NUM_OF_FRUIT_TEXTURES] = {
-	"assets/images/apple.png",
-	"assets/images/lime.png",
-	"assets/images/orange.png",
-	"assets/images/pear.png",
-};
+	const std::string fruitTexture[NUM_OF_FRUIT_TEXTURES] = {
+		"assets/images/apple.png",
+		"assets/images/lime.png",
+		"assets/images/orange.png",
+		"assets/images/pear.png",
+	};
+}
 
 Fruit::Fruit()
 {
