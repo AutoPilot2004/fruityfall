@@ -1,6 +1,7 @@
 ﻿cmake_minimum_required (VERSION 3.27.0)
 
-set(CMAKE_CXX_FLAGS "-fsanitize=undefined")
+add_compile_options("-fsanitize=undefined")
+add_link_options("-fsanitize=undefined")
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
