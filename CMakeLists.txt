@@ -1,6 +1,6 @@
 ﻿cmake_minimum_required (VERSION 3.27.0)
 
-add_compile_options("-fsanitize=undefined")
+add_link_options("-fsanitize=address")
 add_link_options("-fsanitize=undefined")
 
 # Enable Hot Reload for MSVC compilers if supported.
